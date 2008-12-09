@@ -1,0 +1,8 @@
+This is an add-in for the MonoDevelop IDE that provides version
+control support for the Perforce version control system.
+
+This code was developed as an in-house project of Pacific Biosciences,
+Inc. It is released under an all-permissive "MIT" license.
+
+This add-in depends on the proprietary API provided by Perforce. You
+can find this at http://perforce.com/.
