@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03C4A096-2C1C-4E2F-88C1-CA820A4C7306}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>P4API</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="make" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="P4API\AssemblyInfo.cs" />
+    <Compile Include="P4API\ClientApi.cs" />
+    <Compile Include="P4API\ClientUser.cs" />
+    <Compile Include="P4API\Error.cs" />
+    <Compile Include="P4API\ErrorFmtOps.cs" />
+    <Compile Include="P4API\ErrorId.cs" />
+    <Compile Include="P4API\ErrorSeverity.cs" />
+    <Compile Include="P4API\p4api.cs" />
+    <Compile Include="P4API\p4apiPINVOKE.cs" />
+    <Compile Include="P4API\SafeClientUser.cs" />
+    <Compile Include="P4API\StrBuf.cs" />
+    <Compile Include="P4API\StrDict.cs" />
+    <Compile Include="P4API\StrNum.cs" />
+    <Compile Include="P4API\StrPtr.cs" />
+    <Compile Include="P4API\StrRef.cs" />
+    <Compile Include="P4API\StrVarName.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_ClientMerge.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_Enviro.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_FILE.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_FileSys.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_FileSysType.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_KeepAlive.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_P4INT64.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_p_char.cs" />
+    <Compile Include="P4API\SWIGTYPE_p_unsigned_char.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="lib\libp4api.so" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <GtkDesignInfo gtkVersion="2.12.0" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
